@@ -8,6 +8,8 @@ RUN apt-get update && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install mysqli
 RUN apt-get update
 RUN apt-get install -y iputils-ping net-tools
 RUN apt-get install -y libmcrypt-dev
