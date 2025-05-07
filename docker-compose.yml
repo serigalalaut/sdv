@@ -1,0 +1,27 @@
+version : '3'
+networks:
+  sdv-net:
+    external:
+      name: sdv-net
+services:
+  nginx:
+      image: nginx:stable
+      container_name: sdv-nginx
+      ports:
+        - "2000:80"
+      volumes:
+        - ./sdv-admin/:/var/www/html/
+        - ./sdv.conf:/etc/nginx/conf.d/default.conf
+      external_links:
+        - sdv-admin
+      networks:
+        - sdv-net
+  php_sdv:
+      build: ./php
+      container_name: sdv-php
+      volumes:
+        - ./sdv-admin/:/var/www/html/
+      networks:
+        - sdv-net
+      
+  

@@ -1,0 +1,41 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard-analytics",
+      "role": "admin"
+    },
+
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard-analytics",
+      "role": "user"
+    },
+
+    {
+      "name": "User",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "user",
+      "url": "/user",
+      "role": "admin"
+    },
+    {
+      "name": "IPL",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "ipl",
+      "url": "/ipl",
+      "role": "admin"
+    },
+    {
+      "name": "IPL",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "ipl",
+      "url": "/ipl",
+      "role": "user"
+    }
+  ]
+}
