@@ -8,15 +8,21 @@ use Ramsey\Uuid\Uuid;
 
 class Uploads extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
-    return view('content.authentications.uploads');
+    $type = $request->type;
+    if($type != ""){
+      return view('content.authentications.uploads', compact('type'));
+    }
   }
 
   public function uploadImage(Request $request){
         // Validate the incoming request
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Max 2MB
+            'no' => 'required',
+            'type' => 'required',
+            'payment_type' => 'required',
         ]);
 
         // Store the uploaded image
@@ -25,7 +31,6 @@ class Uploads extends Controller
             \DB::table('ipl')->insertGetId([
                 "id" => Uuid::uuid4()->toString(),
                 "media_file" => $imagePath,
-                "note" => $request["note"],
                 "home_no" => $request["no"],
                 "status" => "Pengecekan Admin",
                 "nominal" => $request["type"] == 1 ? env('NOMINAL_KEAMANAN_KEBERSIHAN') : env('NOMINAL_KEAMANAN'),
@@ -33,6 +38,7 @@ class Uploads extends Controller
                 "keamanan" =>  env('KEAMANAN'),
                 "kebersihan" => $request["type"] == 1 ? env('KEBERSIHAN') : 0,
                 "type" => $request["type"],
+                "payment_type" => $request["payment_type"],
                 "created_at" => date('Y-m-d H:i:s'),
                 "updated_at" => date('Y-m-d H:i:s'),
               ]);
