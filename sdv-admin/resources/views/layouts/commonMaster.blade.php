@@ -14,7 +14,7 @@
   <!-- Canonical SEO -->
   <link rel="canonical" href="{{ config('variables.productPage') ? config('variables.productPage') : '' }}">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo_sdv.jpeg') }}" />
   <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>  
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
