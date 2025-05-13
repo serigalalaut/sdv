@@ -53,8 +53,8 @@
                 <option value="">Pilih Pembayaran</option>
                 <option value="dana">Dana</option>
                 <option value="gopay">Gopay</option>
-                <option value="bca">BCA</option>
-                <option value="bsi">BSI</option>
+                <option value="jago">Bank Jago</option>
+                <option value="bsi">BankBSI</option>
                 <option value="cod">Bayar Cash</option>
               </select>
             </div>
@@ -65,8 +65,8 @@
                 <option value="">Pilih Pembayaran</option>
                 <option value="dana" {{ $type == 'dana' ? 'selected' : '' }}>Dana</option>
                 <option value="gopay" {{ $type == 'gopay' ? 'selected' : '' }}>Gopay</option>
-                <option value="bca" {{ $type == 'bca' ? 'selected' : '' }}>BCA</option>
-                <option value="bsi" {{ $type == 'bsi' ? 'selected' : '' }}>BSI</option>
+                <option value="jago" {{ $type == 'jago' ? 'selected' : '' }}>Bank Jago</option>
+                <option value="bsi" {{ $type == 'bsi' ? 'selected' : '' }}>Bank BSI</option>
               </select>
             </div>
             @endif
