@@ -18,7 +18,7 @@ $controller_path = 'App\Http\Controllers';
 //Route::group(['middleware' => ['guest']], function() use($controller_path){
     // authentication
     Route::get('/auth/login', $controller_path . '\authentications\LoginBasic@index')->name('form-login');
-    Route::get('/payment', $controller_path . '\uploads\Uploads@index')->name('form-uploads');
+    Route::get('/payment-confirmation', $controller_path . '\uploads\Uploads@index')->name('form-uploads');
     Route::post('/uploads', $controller_path . '\uploads\Uploads@uploadImage')->name('uploads');
     //Route::get('/auth/register', $controller_path . '\authentications\RegisterBasic@index')->name('auth-register-basic');
     //Route::post('/register', $controller_path . '\authentications\RegisterBasic@register')->name('register');

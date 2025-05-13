@@ -39,7 +39,7 @@ class Uploads extends Controller
                 "kebersihan" => $request["type"] == 1 ? env('KEBERSIHAN') : 0,
                 "type" => $request["type"],
                 "payment_type" => $request["payment_type"],
-                "period" => date('Y-m-01'),
+                "period" => env('period'),
                 "created_at" => date('Y-m-d H:i:s'),
                 "updated_at" => date('Y-m-d H:i:s'),
               ]);
