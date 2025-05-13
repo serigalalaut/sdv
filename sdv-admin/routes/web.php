@@ -37,6 +37,18 @@ Route::group(['middleware' => ['auth']], function() use($controller_path) {
     Route::get('/ipl/confirm/{id}', $controller_path . '\ipl\Ipl@details')->name('ipl-details');
     Route::get('/ipl/lunas/{id}', $controller_path . '\ipl\Ipl@updateStatus')->name('ipl-lunas');
 
+    Route::get('/kas-warga', $controller_path . '\keuangan\keuangan@KasWarga')->name('kas-warga');
+    Route::get('/kas-warga/add', $controller_path . '\keuangan\keuangan@KasWargaAdd')->name('kas-warga-add');
+    Route::post('/kas-warga/add', $controller_path . '\keuangan\keuangan@KasWargaAddPost')->name('kas-warga-add-post');
+    Route::get('/laporan-pengeluaran', $controller_path . '\keuangan\keuangan@Pengeluaran')->name('pengeluaran');
+    Route::get('/laporan-pengeluaran/details/{id}', $controller_path . '\keuangan\keuangan@PengeluaranDetails')->name('pengeluaran-details');
+    Route::get('/laporan-pengeluaran/add', $controller_path . '\keuangan\keuangan@PengeluaranAdd')->name('pengeluaran-add');
+    Route::post('/laporan-pengeluaran/add', $controller_path . '\keuangan\keuangan@PengeluaranAddPost')->name('pengeluaran-add-post');
+    Route::get('/laporan-pemasukan', $controller_path . '\keuangan\keuangan@Pemasukan')->name('pemasukan');
+    Route::get('/laporan-pemasukan/add', $controller_path . '\keuangan\keuangan@PemasukanAdd')->name('pemasukan-add');
+    Route::post('/laporan-pemasukan/add', $controller_path . '\keuangan\keuangan@PemasukanAddPost')->name('pemasukan-add-post');
+    Route::get('/laporan-pemasukan/details/{id}', $controller_path . '\keuangan\keuangan@PemasukanDetails')->name('pemasukan-details');
+    
     // User
     Route::get('/user', $controller_path . '\user\User@index')->name('user');
     Route::get('/user/delete/{id}', $controller_path . '\user\User@deleteUser')->name('user-delete');

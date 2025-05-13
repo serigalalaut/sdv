@@ -11,9 +11,9 @@ class Uploads extends Controller
   public function index(Request $request)
   {
     $type = $request->type;
-    if($type != ""){
+    
       return view('content.authentications.uploads', compact('type'));
-    }
+    
   }
 
   public function uploadImage(Request $request){
@@ -27,7 +27,7 @@ class Uploads extends Controller
 
         // Store the uploaded image
         if ($request->file('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
+            $imagePath = $request->file('image')->store('images/ipl', 'public');
             \DB::table('ipl')->insertGetId([
                 "id" => Uuid::uuid4()->toString(),
                 "media_file" => $imagePath,
@@ -39,6 +39,7 @@ class Uploads extends Controller
                 "kebersihan" => $request["type"] == 1 ? env('KEBERSIHAN') : 0,
                 "type" => $request["type"],
                 "payment_type" => $request["payment_type"],
+                "period" => date('Y-m-01'),
                 "created_at" => date('Y-m-d H:i:s'),
                 "updated_at" => date('Y-m-d H:i:s'),
               ]);

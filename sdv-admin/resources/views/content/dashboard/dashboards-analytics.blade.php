@@ -16,10 +16,47 @@
 
 @section('content')
 <div class="row">
-  <div class="col-lg-12 mb-4 order-0">
+    <div class="col-lg-12 mb-4 order-0">
+      <div class="row" id="sortable-cards">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card drag-item cursor-move mb-lg-0 mb-6">
+            <div class="card-body text-center">
+              <h2>
+                <i class="icon-base bx bx-money icon-sm text-success display-6"></i>
+              </h2>
+              <h4>Saldo Kas</h4>
+              <h5>Rp. 2362</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card drag-item cursor-move mb-lg-0 mb-6">
+            <div class="card-body text-center">
+              <h2>
+                <i class="icon-base bx bx-money icon-sm text-primary display-6"></i>
+              </h2>
+              <h4>Total Pembayaran IPL</h4>
+              <h5>Rp.105,652 dari 100 KK</h5>
+            </div>
+          </div>
+        </div>
+      <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card drag-item cursor-move mb-lg-0 mb-6">
+          <div class="card-body text-center">
+            <h2>
+              <i class="icon-base bx bx-money icon-sm text-info display-6"></i>
+            </h2>
+            <h4>Total Pengeluaran</h4>
+            <h5>Rp. 2362</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
     <div class="card">
       <div class="d-flex align-items-end row">
         <div class="col-sm-7">
+          
           <div class="card-body">
             <h5 class="card-title text-primary">Selamat datang {{auth()->user()->name}} 🎉</h5>
             <p class="mb-4">selamat beraktifitas, semoga harimu menyenangkan.</p>

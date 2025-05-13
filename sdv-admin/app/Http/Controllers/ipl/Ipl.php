@@ -16,18 +16,31 @@ use Illuminate\Support\Facades\Redis;
 
 class IPL extends Controller
 {
-  public function index()
+  public function index(Request $request)
   {
+    $period = $request->period;
+    if($period == ""){
+      $period = date('Y-m');
+    }
     $ipl = DB::table('ipl')
       ->select('*')
+      ->where('type',1)
+      ->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])
       ->orderBy('created_at','DESC')
       ->get();
 
-    $total = DB::table('ipl')->where('status','Lunas')->sum('nominal');
-    $total_keamanan = DB::table('ipl')->where('status','Lunas')->sum('keamanan');
-    $total_kebersihan = DB::table('ipl')->where('status','Lunas')->sum('kebersihan');
-    $total_kas_warga = DB::table('ipl')->where('status','Lunas')->sum('kas_warga');
-    return view('content.ipl.ipl',["ipl"=> $ipl, "total"=> $total, "total_keamanan"=> $total_keamanan, "total_kebersihan"=> $total_kebersihan, "total_kas_warga"=> $total_kas_warga]);
+    $total_warga = DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->count();
+    $total = DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('nominal');
+    $total_keamanan = DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('keamanan');
+    $total_kebersihan = DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('kebersihan');
+    $total_kas_warga = DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('kas_warga');
+    return view('content.ipl.ipl',[
+      "ipl"=> $ipl, 
+      "total"=> $total, 
+      "total_keamanan"=> $total_keamanan, 
+      "total_kebersihan"=> $total_kebersihan, 
+      "total_kas_warga"=> $total_kas_warga,
+      "total_warga"=> $total_warga]);
   }
 
   public function details($id)

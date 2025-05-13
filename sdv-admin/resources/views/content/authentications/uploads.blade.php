@@ -32,19 +32,44 @@
       
           <form action="{{url('/uploads')}}" class="mb-3" method="post" enctype="multipart/form-data">
           @csrf
-          <input type="hidden" name="payment_type" value="{{$type}}">
+          
             <div class="mb-3">
               <label for="image" class="form-label">Masukan Bukti Transfer</label>
               <input type="file" class="form-control" id="image" name="image" placeholder="Masukan gambar" required>
             </div>
             <div class="mb-3">
-              <label for="type" class="form-label"> Tipe Iuran</label>
+              <label for="type" class="form-label"> Pilih Iuran</label>
               <select class="form-control" id="type" name="type" required>
-                <option value="">Pilih Tipe Iuran</option>
+                <option value="">Pilih Iuran</option>
                 <option value="1">Keamanan dan Kebersihan</option>
-                <option value="2">Keamanan</option>
+                <option value="2">Buka & Sahur</option>
+                <option value="3">THR</option>
               </select>
             </div>
+            @if($type == "")
+            <div class="mb-3">
+              <label for="type" class="form-label"> Pilih Pembayaran</label>
+              <select class="form-control" id="type" name="payment_type" required>
+                <option value="">Pilih Pembayaran</option>
+                <option value="dana">Dana</option>
+                <option value="gopay">Gopay</option>
+                <option value="bca">BCA</option>
+                <option value="bsi">BSI</option>
+                <option value="cod">Bayar Cash</option>
+              </select>
+            </div>
+            @else
+            <div class="mb-3">
+              <label for="type" class="form-label"> Pilih Pembayaran</label>
+              <select class="form-control" id="type" name="payment_type" required>
+                <option value="">Pilih Pembayaran</option>
+                <option value="dana" {{ $type == 'dana' ? 'selected' : '' }}>Dana</option>
+                <option value="gopay" {{ $type == 'gopay' ? 'selected' : '' }}>Gopay</option>
+                <option value="bca" {{ $type == 'bca' ? 'selected' : '' }}>BCA</option>
+                <option value="bsi" {{ $type == 'bsi' ? 'selected' : '' }}>BSI</option>
+              </select>
+            </div>
+            @endif
             <div class="mb-3">
               <label for="no" class="form-label">Masukan Blok dan Nomor Rumah</label>
               <input type="text" class="form-control" id="no" name="no" placeholder="Contoh: B1-1" required>

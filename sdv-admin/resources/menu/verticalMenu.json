@@ -24,18 +24,63 @@
       "role": "admin"
     },
     {
-      "name": "IPL",
+      "name": "Iuran Warga",
       "icon": "menu-icon tf-icons bx bx-collection",
-      "slug": "ipl",
-      "url": "/ipl",
-      "role": "admin"
+      "slug": "iuran-warga",
+      "role": "admin",
+      "submenu": [
+        {
+          "name": "IPL",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "ipl",
+          "url": "/ipl",
+          "role": "admin"
+        },
+        {
+          "name": "Buka dan Sahur",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "buka-dan-sahur",
+          "url": "/buka-dan-sahur",
+          "role": "admin"
+        },
+        {
+          "name": "THR",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "thr",
+          "url": "/thr",
+          "role": "admin"
+        }
+      ]
     },
     {
-      "name": "IPL",
+      "name": "Laporan Keuangan",
       "icon": "menu-icon tf-icons bx bx-collection",
-      "slug": "ipl",
-      "url": "/ipl",
-      "role": "user"
+      "slug": "laporan-keuangan",
+      "url": "/laporan-keuangan",
+      "role": "admin",
+      "submenu": [
+        {
+          "name": "Kas Warga",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "kas-warga",
+          "url": "/kas-warga",
+          "role": "admin"
+        },
+        {
+          "name": "Laporan Pemasukan",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "laporan-pemasukan",
+          "url": "/laporan-pemasukan",
+          "role": "admin"
+        },
+        {
+          "name": "Laporan Pengeluaran",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "laporan-pengeluaran",
+          "url": "/laporan-pengeluaran",
+          "role": "admin"
+        }
+      ]
     }
   ]
 }
