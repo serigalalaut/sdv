@@ -8,7 +8,7 @@
 <!-- Responsive Table -->
 <div class="col-lg-12 mb-4 order-0">
       <div class="row" id="sortable-cards">
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-12 col-md-6 col-sm-12">
           <div class="card drag-item cursor-move mb-lg-0 mb-6">
             <div class="card-body text-center">
               <h2>

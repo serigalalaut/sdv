@@ -8,7 +8,7 @@
 <!-- Responsive Table -->
 <div class="col-lg-12 mb-4 order-0">
       <div class="row" id="sortable-cards">
-        <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="col-lg-12 col-md-6 col-sm-12">
           <div class="card drag-item cursor-move mb-lg-0 mb-6">
             <div class="card-body text-center">
               <h2>
@@ -42,6 +42,7 @@
         <tr class="text-nowrap">
           <th>#</th>
           <th>Tanggal Transaksi</th>
+          <th>Judul</th>
           <th>Nominal</th>
           <th>Periode</th>
           <th>Bukti Pengeluaran</th>
@@ -53,6 +54,7 @@
         <tr>
           <th scope="row">{{$loop->index+1}}</th>
           <td>{{date('l, j F Y', strtotime($data->transaction_date))}}</td>
+          <td>{{$data->title}}</td>
           <td>Rp. {{ number_format($data->nominal, 0, ',', '.') }}</td>
           <td>{{date('F Y', strtotime($data->period))}}</td>
           <td>
