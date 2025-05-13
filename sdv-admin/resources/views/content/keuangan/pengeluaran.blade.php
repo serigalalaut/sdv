@@ -14,7 +14,7 @@
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-success display-6"></i>
               </h2>
-              <h4>Total Pengeluaran Periode {{ date('Y')}}</h4>
+              <h4>Total Pengeluaran Periode {{ date('F Y')}}</h4>
               <h5>Rp. {{ number_format($total, 0, ',', '.') }}</h5>
             </div>
           </div>

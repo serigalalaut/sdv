@@ -18,36 +18,36 @@
 <div class="row">
     <div class="col-lg-12 mb-4 order-0">
       <div class="row" id="sortable-cards">
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card drag-item cursor-move mb-lg-0 mb-6">
             <div class="card-body text-center">
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-success display-6"></i>
               </h2>
-              <h4>Saldo Kas</h4>
-              <h5>Rp. 2362</h5>
+              <h4>Saldo Kas Bulan {{ date('F Y') }}</h4>
+              <h5>Rp. {{ number_format($kas_warga, 0, ',', '.') }}</h5>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card drag-item cursor-move mb-lg-0 mb-6">
             <div class="card-body text-center">
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-primary display-6"></i>
               </h2>
-              <h4>Total Pembayaran IPL</h4>
-              <h5>Rp.105,652 dari 100 KK</h5>
+              <h4>Pembayaran IPL Bulan {{ date('F Y') }}</h4>
+              <h5>Rp. {{ number_format($pemasukan, 0, ',', '.') }} dari {{$total_warga}} KK</h5>
             </div>
           </div>
         </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
+      <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card drag-item cursor-move mb-lg-0 mb-6">
           <div class="card-body text-center">
             <h2>
               <i class="icon-base bx bx-money icon-sm text-info display-6"></i>
             </h2>
-            <h4>Total Pengeluaran</h4>
-            <h5>Rp. 2362</h5>
+            <h4>Pengeluaran Bulan {{ date('F Y') }}</h4>
+            <h5>Rp. {{ number_format($pengeluaran, 0, ',', '.') }}</h5>
           </div>
         </div>
       </div>

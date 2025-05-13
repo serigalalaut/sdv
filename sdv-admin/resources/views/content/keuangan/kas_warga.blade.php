@@ -8,13 +8,13 @@
 <!-- Responsive Table -->
 <div class="col-lg-12 mb-4 order-0">
       <div class="row" id="sortable-cards">
-        <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card drag-item cursor-move mb-lg-0 mb-6">
             <div class="card-body text-center">
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-success display-6"></i>
               </h2>
-              <h4>Total Kas Periode {{ date('Y')}}</h4>
+              <h4>Total Kas Periode {{ date('F Y')}}</h4>
               <h5>Rp. {{ number_format($total, 0, ',', '.') }}</h5>
             </div>
           </div>
