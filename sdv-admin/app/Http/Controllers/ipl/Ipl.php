@@ -40,7 +40,9 @@ class IPL extends Controller
       "total_keamanan"=> $total_keamanan, 
       "total_kebersihan"=> $total_kebersihan, 
       "total_kas_warga"=> $total_kas_warga,
-      "total_warga"=> $total_warga]);
+      "total_warga"=> $total_warga,
+      "period" => $period
+    ]);
   }
 
   public function details($id)

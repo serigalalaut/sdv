@@ -78,10 +78,10 @@
             <div class="mb-3">
               <label for="no" class="form-label">Pembayaran Rapel ? </label>
               <br>
-              <input type="radio" class="form-check-input" id="is_rapel" name="is_rapel" value="1" placeholder="Contoh: B1-1" onclick="SelectHandler(this)" required>
+              <input type="radio" class="form-check-input" id="is_rapel" name="is_rapel" value="1" onclick="SelectHandler(this)" required>
               <label for="is_rapel" class="form-check-label">Ya</label>
               <br>
-              <input type="radio" class="form-check-input" id="is_rapel" name="is_rapel" value="0" placeholder="Contoh: B1-1" onclick="SelectHandler(this)" required>
+              <input type="radio" class="form-check-input" id="is_rapel" name="is_rapel" value="0" checked onclick="SelectHandler(this)" required>
               <label for="is_rapel" class="form-check-label">Tidak</label>
             </div>
             <div id="rapel_periode" class="mb-3" style="display:none;">

@@ -56,7 +56,7 @@
     <br>
 <div class="card">
 <div class="mb-3 card-header">
-<h3 class="fw-bold py-3 mb-4">Data Pembayaran IPL Bulan {{ date('F Y')}}</h3> 
+<h3 class="fw-bold py-3 mb-4">Data Pembayaran IPL Bulan {{ date('F Y', strtotime($period))}}</h3> 
 <h5><strong>{{ $total_warga }} Warga Sudah Bayar IPL</strong></h5>
 <input type="month" class="form-control" id="locfilter" placeholder="Cari Data" style="width: 20%; margin-bottom: 10px;" value="{{ date('Y-m', strtotime('-1 month')) }}">
 <a href="/ipl?period=" class="btn btn-primary" onclick="this.href='/ipl?period=' + document.getElementById('locfilter').value">Cari Periode Sebelumnya</a>

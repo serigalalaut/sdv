@@ -11,7 +11,7 @@ class Uploads extends Controller
   public function index(Request $request)
   {
     $type = $request->type;
-    $komplek = \DB::table('komplek')->where('active', true)->orderBy('no', 'asc')->get();
+    $komplek = \DB::table('komplek')->select( 'no')->where('active', true)->orderBy('no', 'asc')->get()->pluck('no')->toArray();;
     return view('content.authentications.uploads', compact('type', 'komplek'));
     
   }
