@@ -76,7 +76,7 @@
           <th>Metode Pembayaran</th>
           <th>Nominal</th>
           <th>Status</th>
-          <th>Periode</th>
+          <th>Rapel</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -89,7 +89,7 @@
           <td>{{ strtoupper($data->payment_type) }}</td>
           <td>Rp. {{ number_format($data->nominal, 0, ',', '.') }}</td>
           <td>{{$data->status}}</td>
-          <td>{{date('F Y', strtotime($data->period))}}</td>
+          <td>{{$data->is_rapel == 1 ? $data->rapel_periode." Bulan" : '-'}}</td>
           <td>
             
               <a href="/ipl/confirm/{{$data->id}}" class="btn btn-primary">Lebih Detail</a>

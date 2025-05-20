@@ -72,9 +72,34 @@
             @endif
             <div class="mb-3">
               <label for="no" class="form-label">Masukan Blok dan Nomor Rumah</label>
-              <input type="text" class="form-control" id="no" name="no" placeholder="Contoh: B1-1" required>
+              <input type="text" class="form-control typeahead" id="no" name="no" placeholder="Contoh: B1-1" required>
             </div>
-            
+
+            <div class="mb-3">
+              <label for="no" class="form-label">Pembayaran Rapel ? </label>
+              <br>
+              <input type="radio" class="form-check-input" id="is_rapel" name="is_rapel" value="1" placeholder="Contoh: B1-1" onclick="SelectHandler(this)" required>
+              <label for="is_rapel" class="form-check-label">Ya</label>
+              <br>
+              <input type="radio" class="form-check-input" id="is_rapel" name="is_rapel" value="0" placeholder="Contoh: B1-1" onclick="SelectHandler(this)" required>
+              <label for="is_rapel" class="form-check-label">Tidak</label>
+            </div>
+            <div id="rapel_periode" class="mb-3" style="display:none;">
+              <label for="no" class="form-label">Pilih Periode Rapel</label>
+              <select class="form-control" name="rapel_periode">
+                <option value="2">2 Bulan</option>
+                <option value="3">3 Bulan</option>
+                <option value="4">4 Bulan</option>
+                <option value="5">5 Bulan</option>
+                <option value="6">6 Bulan</option>
+                <option value="7">7 Bulan</option>
+                <option value="8">8 Bulan</option>
+                <option value="9">9 Bulan</option>
+                <option value="10">10 Bulan</option>
+                <option value="11">11 Bulan</option>
+                <option value="12">12 Bulan</option>
+              </select>
+            </div>
             <div class="mb-3">
               <button class="btn btn-primary d-grid w-100" type="submit" style="background-color:#fecf39;border-color:#fecf39">Kirim</button>
             </div>
@@ -93,4 +118,43 @@
   </div>
 </div>
 </div>
+<link rel="stylesheet" href="{{ asset('assets/css/typeahead.css') }}" />
+<script src="{{ asset('assets/js/typeahead.js') }}"></script> 
+
+<script>
+  var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+        var matches, substrRegex;
+        matches = [];
+        substrRegex = new RegExp(q, "i");
+        $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+            matches.push(str);
+        }
+        });
+
+        cb(matches);
+    };
+    };
+
+    var states = {!! json_encode($komplek) !!};
+    $(".typeahead").typeahead({
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: "states",
+        source: substringMatcher(states)
+    });
+
+    function SelectHandler(select){
+        if(select.value == '1'){
+            $("#rapel_periode").show();
+            
+        }else{
+            $("#rapel_periode").hide();
+        }
+    }
+
+</script>
 @endsection

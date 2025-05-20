@@ -11,8 +11,8 @@ class Uploads extends Controller
   public function index(Request $request)
   {
     $type = $request->type;
-    
-      return view('content.authentications.uploads', compact('type'));
+    $komplek = \DB::table('komplek')->where('active', true)->orderBy('no', 'asc')->get();
+    return view('content.authentications.uploads', compact('type', 'komplek'));
     
   }
 
@@ -40,6 +40,8 @@ class Uploads extends Controller
                 "type" => $request["type"],
                 "payment_type" => $request["payment_type"],
                 "period" => env('period'),
+                "is_rapel" => $request["is_rapel"],
+                "rapel_periode" => $request["rapel_periode"],
                 "created_at" => date('Y-m-d H:i:s'),
                 "updated_at" => date('Y-m-d H:i:s'),
               ]);
