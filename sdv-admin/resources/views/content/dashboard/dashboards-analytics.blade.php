@@ -24,8 +24,8 @@
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-success display-6"></i>
               </h2>
-              <h4>Saldo Kas Bulan {{ date('F Y') }}</h4>
-              <h5>Rp. {{ number_format($kas_warga, 0, ',', '.') }}</h5>
+              <h4>Sisa Saldo Kas Bulan {{ date('F Y') }}</h4>
+              <h5>Rp. {{ number_format($kas_warga-$pengeluaran, 0, ',', '.') }}</h5>
             </div>
           </div>
         </div>
