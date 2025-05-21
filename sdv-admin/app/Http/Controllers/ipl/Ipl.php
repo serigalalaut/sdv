@@ -20,7 +20,7 @@ class IPL extends Controller
   {
     $period = $request->period;
     if($period == ""){
-      $period = date('Y-m');
+      $period = date('Y-m',strtotime(env('period')));
     }
     $ipl = DB::table('ipl')
       ->select('*')
