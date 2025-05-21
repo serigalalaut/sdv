@@ -41,7 +41,7 @@ class Uploads extends Controller
                 "payment_type" => $request["payment_type"],
                 "period" => env('period'),
                 "is_rapel" => $request["is_rapel"],
-                "rapel_periode" => $request["rapel_periode"],
+                "rapel_periode" => $request["is_rapel"] == 1 ? $request["rapel_periode"] : null,
                 "note" => $request["keterangan"],
                 "created_at" => date('Y-m-d H:i:s'),
                 "updated_at" => date('Y-m-d H:i:s'),
