@@ -35,7 +35,7 @@
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-primary display-6"></i>
               </h2>
-              <h4>Pembayaran IPL Bulan {{ date('F Y') }}</h4>
+              <h4>Pembayaran IPL Bulan {{ date('F Y',strtotime(env('period'))) }}</h4>
               <h5>Rp. {{ number_format($pemasukan, 0, ',', '.') }} dari {{$total_warga}} KK</h5>
             </div>
           </div>

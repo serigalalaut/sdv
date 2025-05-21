@@ -12,7 +12,7 @@ class Analytics extends Controller
   public function index()
   {
     if(Auth::check()){
-      $period = date('Y-m');
+      $period = date('Y-m',strtotime(env('period')));
       $kas_warga = DB::table('kas_warga')->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('nominal');
       $total_warga = DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->count();
       $pemasukan =DB::table('ipl')->where('status','Lunas')->where('type',1)->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('nominal');

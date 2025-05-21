@@ -101,6 +101,10 @@
               </select>
             </div>
             <div class="mb-3">
+              <label for="no" class="form-label">Keterangan</label>
+              <textarea class="form-control" name="keterangan" id="keterangan" placeholder="Keterangan"></textarea>
+            </div>
+            <div class="mb-3">
               <button class="btn btn-primary d-grid w-100" type="submit" style="background-color:#fecf39;border-color:#fecf39">Kirim</button>
             </div>
           </form>

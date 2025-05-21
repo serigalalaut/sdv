@@ -67,13 +67,6 @@
           "role": "admin"
         },
         {
-          "name": "Laporan Pemasukan",
-          "icon": "menu-icon tf-icons bx bx-collection",
-          "slug": "laporan-pemasukan",
-          "url": "/laporan-pemasukan",
-          "role": "admin"
-        },
-        {
           "name": "Laporan Pengeluaran",
           "icon": "menu-icon tf-icons bx bx-collection",
           "slug": "laporan-pengeluaran",

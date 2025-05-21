@@ -14,7 +14,7 @@
               <h2>
                 <i class="icon-base bx bx-money icon-sm text-success display-6"></i>
               </h2>
-              <h4>Total Pengeluaran Periode {{ date('F Y')}}</h4>
+              <h4>Total Pengeluaran Periode {{ date('F Y',strtotime($period)) }}</h4>
               <h5>Rp. {{ number_format($total, 0, ',', '.') }}</h5>
             </div>
           </div>
@@ -27,7 +27,7 @@
 <br>
 <div class="card">
 <div class="mb-3 card-header">
-<h3 class="fw-bold py-3 mb-4">Data Pengeluaran Periode {{ date('F Y')}}</h3> 
+<h3 class="fw-bold py-3 mb-4">Data Pengeluaran Periode {{ date('F Y',strtotime($period)) }}</h3> 
 <input type="month" class="form-control" id="locfilter" placeholder="Cari Data" style="width: 20%; margin-bottom: 10px;" value="{{ date('Y-m', strtotime('-1 month')) }}">
 <a href="/laporan-pengeluaran?period=" class="btn btn-primary" onclick="this.href='/laporan-pengeluaran?period=' + document.getElementById('locfilter').value">Cari Periode Sebelumnya</a>
 @if (session('success'))

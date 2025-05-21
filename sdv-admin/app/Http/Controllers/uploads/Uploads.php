@@ -42,6 +42,7 @@ class Uploads extends Controller
                 "period" => env('period'),
                 "is_rapel" => $request["is_rapel"],
                 "rapel_periode" => $request["rapel_periode"],
+                "note" => $request["keterangan"],
                 "created_at" => date('Y-m-d H:i:s'),
                 "updated_at" => date('Y-m-d H:i:s'),
               ]);

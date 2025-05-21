@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use App\Http\Controllers\KeuanganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,7 @@ Route::group(['middleware' => ['auth']], function() use($controller_path) {
     Route::get('/laporan-pemasukan/add', $controller_path . '\keuangan\keuangan@PemasukanAdd')->name('pemasukan-add');
     Route::post('/laporan-pemasukan/add', $controller_path . '\keuangan\keuangan@PemasukanAddPost')->name('pemasukan-add-post');
     Route::get('/laporan-pemasukan/details/{id}', $controller_path . '\keuangan\keuangan@PemasukanDetails')->name('pemasukan-details');
-    
+    Route::get('/laporan-keuangan', $controller_path . '\keuangan\keuangan@Laporan')->name('laporan');
     // User
     Route::get('/user', $controller_path . '\user\User@index')->name('user');
     Route::get('/user/delete/{id}', $controller_path . '\user\User@deleteUser')->name('user-delete');
@@ -64,4 +65,6 @@ Route::group(['middleware' => ['auth']], function() use($controller_path) {
     Route::post('/slider/add-slider', $controller_path . '\slider\Slider@addSlider')->name('add-slider');
     Route::post('/slider/update-slider', $controller_path . '\slider\Slider@editSlider')->name('update-slider');
     Route::get('/slider/delete/{id}', $controller_path . '\slider\Slider@deleteSlider')->name('slider-delete');
+
+    Route::get('/keuangan/laporan-kas-warga', $controller_path . '\keuangan\keuangan@laporanKasWarga')->name('keuangan.laporanKasWarga');
 });

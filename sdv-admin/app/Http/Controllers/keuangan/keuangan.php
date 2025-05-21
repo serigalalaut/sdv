@@ -34,6 +34,7 @@ class Keuangan extends Controller
     return view('content.keuangan.kas_warga',[
       "kas_warga"=> $kas_warga, 
       "total"=> $total,
+      "period"=> $period,
     ]);
   }
 
@@ -84,6 +85,7 @@ class Keuangan extends Controller
     return view('content.keuangan.pengeluaran',[
       "pengeluaran"=> $pengeluaran, 
       "total"=> $total,
+      "period"=> $period,
     ]);
   }     
 
@@ -192,6 +194,23 @@ class Keuangan extends Controller
 
     return redirect()->back()->with('success', 'Data berhasil ditambahkan');
   }       
-  
-  
+
+  public function Laporan(Request $request)
+  {
+    
+
+    return view('content.keuangan.laporan');
+  }
+
+  public function laporanKasWarga()
+  {
+    $period = date('Y-m',strtotime(env('period')));
+    $saldoAwal = DB::table('kas_warga')->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [strtotime('-1 month', strtotime($period))])->sum('nominal');
+    $pengeluaran = DB::table('laporan_keuangan')->where('type','pengeluaran')->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", $period)->get();
+    $kas_warga = DB::table('kas_warga')->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->get();
+    $totalKas = DB::table('kas_warga')->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('nominal');
+    $totalPengeluaran = DB::table('laporan_keuangan')->where('type','pengeluaran')->whereRaw("TO_CHAR(period, 'yyyy-mm') = ?", [$period])->sum('nominal');
+    return view('content.keuangan.laporan_keuangan_kas_warga', compact(
+      'pengeluaran','kas_warga','totalKas','totalPengeluaran','saldoAwal'));
+  }
 }
