@@ -40,7 +40,6 @@
             <div class="mb-3">
               <label for="type" class="form-label"> Pilih Iuran</label>
               <select class="form-control" id="type" name="type" required>
-                <option value="">Pilih Iuran</option>
                 <option value="1">Keamanan dan Kebersihan</option>
                 <option value="2">Buka & Sahur</option>
                 <option value="3">THR</option>
@@ -50,7 +49,6 @@
             <div class="mb-3">
               <label for="type" class="form-label"> Pilih Pembayaran</label>
               <select class="form-control" id="type" name="payment_type" required>
-                <option value="">Pilih Pembayaran</option>
                 <!--<option value="dana">Dana</option>
                 <option value="gopay">Gopay</option>-->
                 <option value="jago">Bank Jago</option>
