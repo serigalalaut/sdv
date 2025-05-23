@@ -103,6 +103,7 @@
             </div>
             <div class="mb-3">
               <button class="btn btn-primary d-grid w-100" type="submit" style="background-color:#fecf39;border-color:#fecf39">Kirim</button>
+              <a href="{{url('https://wargasdv.com/ipl')}}" class="btn btn-secondary d-grid w-100">Kembali</a>
             </div>
           </form>
 
