@@ -31,7 +31,7 @@
                 
                 <div class="mb-3">
                     <label class="form-labels">Bukti Pembayaran</label> <br>
-                    <img src="{{ asset('storage/' . $data->media_file) }}" alt="Image" style="width: 400px; height: 300px;">
+                    <img src="{{ asset('storage/' . $data->media_file) }}" alt="Image" style="width: 400px;">
                 </div>
                 
             </div>
