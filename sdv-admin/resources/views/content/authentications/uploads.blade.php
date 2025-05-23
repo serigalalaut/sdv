@@ -51,10 +51,9 @@
               <label for="type" class="form-label"> Pilih Pembayaran</label>
               <select class="form-control" id="type" name="payment_type" required>
                 <option value="">Pilih Pembayaran</option>
-                <option value="dana">Dana</option>
-                <option value="gopay">Gopay</option>
+                <!--<option value="dana">Dana</option>
+                <option value="gopay">Gopay</option>-->
                 <option value="jago">Bank Jago</option>
-                <option value="bsi">BankBSI</option>
                 <option value="cod">Bayar Cash</option>
               </select>
             </div>
@@ -63,10 +62,8 @@
               <label for="type" class="form-label"> Pilih Pembayaran</label>
               <select class="form-control" id="type" name="payment_type" required>
                 <option value="">Pilih Pembayaran</option>
-                <option value="dana" {{ $type == 'dana' ? 'selected' : '' }}>Dana</option>
-                <option value="gopay" {{ $type == 'gopay' ? 'selected' : '' }}>Gopay</option>
                 <option value="jago" {{ $type == 'jago' ? 'selected' : '' }}>Bank Jago</option>
-                <option value="bsi" {{ $type == 'bsi' ? 'selected' : '' }}>Bank BSI</option>
+                <option value="cod" {{ $type == 'cod' ? 'selected' : '' }}>Bayar Cash</option>
               </select>
             </div>
             @endif
