@@ -18,7 +18,7 @@
           <div class="app-brand justify-content-center">
             <a href="{{url('/uploads')}}" class="app-brand-link gap-2">
               
-              <span class="app-brand-text demo text-body fw-bolder" style="text-transform:none;">Upload Bukti <br>Pembayaran IPL</span>
+              <span class="app-brand-text demo text-body fw-bolder" style="text-transform:none;">Upload Bukti <br>Pembayaran</span>
             </a>
           </div>
           <!-- /Logo 
