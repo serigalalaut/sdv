@@ -67,4 +67,10 @@ Route::group(['middleware' => ['auth']], function() use($controller_path) {
     Route::get('/slider/delete/{id}', $controller_path . '\slider\Slider@deleteSlider')->name('slider-delete');
 
     Route::get('/keuangan/laporan-kas-warga', $controller_path . '\keuangan\keuangan@laporanKasWarga')->name('keuangan.laporanKasWarga');
+
+    Route::get('/warga', $controller_path . '\warga\warga@index')->name('warga');
+    Route::get('/warga/details/{id}', $controller_path . '\warga\warga@details')->name('warga-details');
+    Route::get('/warga/edit/{id}', $controller_path . '\warga\warga@edit')->name('warga-edit');
+    Route::post('/warga/update', $controller_path . '\warga\warga@update')->name('warga-update');
+
 });

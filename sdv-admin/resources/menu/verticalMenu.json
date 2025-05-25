@@ -24,6 +24,13 @@
       "role": "admin"
     },
     {
+      "name": "Warga",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "warga",
+      "url": "/warga",
+      "role": "admin"
+    },
+    {
       "name": "Iuran Warga",
       "icon": "menu-icon tf-icons bx bx-collection",
       "slug": "iuran-warga",
