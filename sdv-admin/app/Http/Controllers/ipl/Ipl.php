@@ -48,8 +48,9 @@ class IPL extends Controller
   public function details($id)
   {
     $ipl = DB::table('ipl')
-      ->select('*')
-      ->where('id',$id)
+      ->select('ipl.*', 'warga.no_suami', 'warga.no_istri')
+      ->join('warga', 'warga.no_rumah', '=', 'ipl.home_no')
+      ->where('ipl.id',$id)
       ->first();
 
     return view('content.ipl.details',["data"=> $ipl]);
