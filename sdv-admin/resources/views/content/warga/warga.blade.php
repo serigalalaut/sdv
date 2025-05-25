@@ -36,8 +36,8 @@
           <td>{{$data->no_rumah}}</td>
           <td>{{$data->nama_suami}}</td>
           <td>{{$data->nama_istri}}</td>
-          <td>{{$data->no_suami}}</td>
-          <td>{{$data->no_istri}}</td>
+          <td><a href="https://wa.me/{{$data->no_suami}}">{{$data->no_suami}}</a></td>
+          <td><a href="https://wa.me/{{$data->no_istri}}">{{$data->no_istri}}</a></td>
           <td>{{$data->status}}</td>
           <td>
             
