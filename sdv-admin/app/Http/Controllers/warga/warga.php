@@ -67,4 +67,14 @@ class Warga extends Controller
 
     return redirect('/warga')->with('success','Data Berhasil Di Update');
   }
+
+  public function aspirasi(Request $request)
+  {
+    $aspirasi = DB::table('aspirasi')
+      ->get();
+
+    return view('content.aspirasi.aspirasi',[
+      "aspirasi"=> $aspirasi, 
+    ]);
+  }
 }

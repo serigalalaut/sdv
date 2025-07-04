@@ -31,6 +31,13 @@
       "role": "admin"
     },
     {
+      "name": "Aspirasi Warga",
+      "icon": "menu-icon tf-icons bx bx-collection",
+      "slug": "aspirasi-warga",
+      "url": "/aspirasi-warga",
+      "role": "admin"
+    },
+    {
       "name": "Iuran Warga",
       "icon": "menu-icon tf-icons bx bx-collection",
       "slug": "iuran-warga",

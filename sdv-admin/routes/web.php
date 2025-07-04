@@ -72,5 +72,6 @@ Route::group(['middleware' => ['auth']], function() use($controller_path) {
     Route::get('/warga/details/{id}', $controller_path . '\warga\warga@details')->name('warga-details');
     Route::get('/warga/edit/{id}', $controller_path . '\warga\warga@edit')->name('warga-edit');
     Route::post('/warga/update', $controller_path . '\warga\warga@update')->name('warga-update');
+    Route::get('/aspirasi-warga', $controller_path . '\warga\warga@aspirasi')->name('aspirasi-warga');
 
 });
