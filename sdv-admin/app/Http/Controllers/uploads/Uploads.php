@@ -19,7 +19,7 @@ class Uploads extends Controller
   public function uploadImage(Request $request){
         // Validate the incoming request
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Max 2MB
+            //'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Max 2MB
             'no' => 'required',
             'type' => 'required',
             'payment_type' => 'required',
