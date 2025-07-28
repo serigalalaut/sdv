@@ -35,7 +35,7 @@
           
             <div class="mb-3">
               <label for="image" class="form-label">Masukan Bukti Transfer</label>
-              <input type="file" class="form-control" id="image" name="image" placeholder="Masukan gambar" required>
+              <input type="file" class="form-control" id="image" name="image" placeholder="Masukan gambar">
             </div>
             <div class="mb-3">
               <label for="type" class="form-label"> Pilih Iuran</label>
