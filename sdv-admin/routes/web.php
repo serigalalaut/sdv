@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() use($controller_path) {
     Route::get('/ipl', $controller_path . '\ipl\Ipl@index')->name('ipl');
     Route::get('/ipl/confirm/{id}', $controller_path . '\ipl\Ipl@details')->name('ipl-details');
     Route::get('/ipl/lunas/{id}', $controller_path . '\ipl\Ipl@updateStatus')->name('ipl-lunas');
+    Route::get('/iuran/agustusan', $controller_path . '\ipl\Ipl@Agustusan')->name('agustusan');
 
     Route::get('/kas-warga', $controller_path . '\keuangan\keuangan@KasWarga')->name('kas-warga');
     Route::get('/kas-warga/add', $controller_path . '\keuangan\keuangan@KasWargaAdd')->name('kas-warga-add');

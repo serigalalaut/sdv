@@ -63,6 +63,13 @@
           "slug": "thr",
           "url": "/thr",
           "role": "admin"
+        },
+        {
+          "name": "Agustusan",
+          "icon": "menu-icon tf-icons bx bx-collection",
+          "slug": "agustusan",
+          "url": "/iuran/agustusan",
+          "role": "admin"
         }
       ]
     },

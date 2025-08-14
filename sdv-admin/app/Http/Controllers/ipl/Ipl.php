@@ -67,4 +67,21 @@ class IPL extends Controller
     return redirect('/ipl/confirm/'.$id)->with('success','Data Sudah Terkonfirmasi');
   }
 
+  public function Agustusan(Request $request)
+  {
+    
+    $agustusan = DB::table('iuran')
+      ->select('*')
+      ->orderBy('created_at','DESC')
+      ->get();
+
+    $total_warga = DB::table('iuran')->where('status','Lunas')->count();
+    $total = DB::table('iuran')->where('status','Lunas')->sum('nominal');
+    return view('content.iuran.agustusan',[
+      "agustusan"=> $agustusan, 
+      "total"=> $total, 
+      "total_warga"=> $total_warga,
+    ]);
+  }
+
 }
