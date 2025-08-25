@@ -34,7 +34,7 @@ class Uploads extends Controller
                 "home_no" => $request["no"],
                 "status" => "Pengecekan Admin",
                 "nominal" => $request["type"] == 1 ? env('NOMINAL_KEAMANAN_KEBERSIHAN') : env('NOMINAL_KEAMANAN'),
-                "kas_warga" => 10000,
+                "kas_warga" => 20000,
                 "keamanan" =>  env('KEAMANAN'),
                 "kebersihan" => $request["type"] == 1 ? env('KEBERSIHAN') : 0,
                 "type" => $request["type"],
